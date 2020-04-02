@@ -1,0 +1,2 @@
+mkdir data/$1
+touch data/$1/{0..9} && touch data/$1/{a..z} && touch data/$1/symbols
