@@ -18,7 +18,7 @@ Python/Bash script to sort big data files such as Data-Breaches to be able to gr
 </p>
 
 <li>
-<h1>How to import data?</h1>
+<h2>How to import data?</h2>
 </li>
 <p><pre>cd file-sorter
 cd ./python
@@ -33,7 +33,7 @@ Options:
 
 
 <li>
-<h1>How to query data?</h1>
+<h2>How to query data?</h2>
 </li>
 <p>After you have finished importing the data file, you can query for it by typing:
 E.g.<pre> ./query.sh name@example.com</pre> </p>
