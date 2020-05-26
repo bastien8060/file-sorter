@@ -1,24 +1,54 @@
-This is breach compilation from various data breaches combined into one.
+# File-Sorter
+Python/Bash script to sort big data files such as Data-Breaches to be able to grep/find a line much quicker.
 
 
-Usage: 	
-	./query.sh example@example.com
+<ul>
+<li>
+<h1>What it does?</h1>
+</li>
+<p>
+<pre>sudo make install</pre>
+</p>
+
+<li>
+<h1>How to install it?</h1>
+</li>
+<p>
+<pre>git clone https://github.com/bastien8060/file-sorter</pre>
+</p>
+
+<li>
+<h1>How to import data?</h1>
+</li>
+<p><pre>cd file-sorter
+cd ./python
+./addbreach.py</pre>
+Note: The data file has to be in <pre>python/inputbreach/breach.txt</pre>
+<h2>
+Options:
+</h2>
+<ul>
+<li>-D: delete source file after completed.</li>
+</ul>
 
 
-Import:
-	1. Add into "importbreach" sorted and filtered breaches to make them look
-like "email@email.com:plaintext_password" (do not use space or special symbols in filename)
-	2. Then run ./sorter.sh
+<li>
+<h1>How to query data?</h1>
+</li>
+<p>After you have finished importing the data file, you can query for it by typing:
+E.g.<pre> ./query.sh name@example.com</pre> </p>
 
 
-Information:
-	All imported files are in "imported.log" file.
-	All data is in "data" folder.
+<li>
+<h1>Information:</h1>
+</li><ul>
+<li><p>List of imported files are in the "imported.log" file. The script keeps track of imported file in this log with their SHA sums to prevent a file to be added twice.</p></li>
+ <li><p>All data is in "data" folder.</p></li>
+ <li><p>Use only for educational and penetration testing purposes.</p></li></ul>
+</ul>
 
 
-Use only for educational and penetration testing purposes.
 
 
-If you like my job please donate:
-Bitcoin:	1NrNf6E3rTuDDGeUdU2CMpGNyrQAeB7dNT
-Dogecoin:	DFqkJHnb5t5Y6e4mbXTiS9aEhspFkzxkPU
+
+
