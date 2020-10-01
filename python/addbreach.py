@@ -10,15 +10,15 @@ def file_len(fname):
 if len(sys.argv) >= 2:
   if (sys.argv[1] == "-h") or (sys.argv[1] == "--help"):
     print("[*] Usage ")
-    print("	Add breach files in the directory inputbreach and run sorter.py")
-    print("	The breach has to be in the format:")
-    print("		adress1@domain.com:password1")
-    print("		adress2@domain.com:password2")
-    print("		...")
-    print("	Once finished, use ./query.py to search for lines")
+    print(" Add breach files in the directory inputbreach and run sorter.py")
+    print(" The breach has to be in the format:")
+    print("   adress1@domain.com:password1")
+    print("   adress2@domain.com:password2")
+    print("   ...")
+    print(" Once finished, use ./query.py to search for lines")
     print(" ")
     print("[*] Parameters:")
-    print('	"-D" : Deletes input file or files after being imported')
+    print(' "-D" : Deletes input file or files after being imported')
     exit(0) 
 #print("no help needed take the L")
 with open('./scripts/checksum.sh', 'rb') as file:
@@ -72,3 +72,5 @@ if len(sys.argv) >= 2:
     rc = subprocess.call("bash ./scripts/shalog.sh -d", shell=True)
   else:
     rc = subprocess.call("bash ./scripts/shalog.sh", shell=True)
+else:
+  rc = subprocess.call("bash ./scripts/shalog.sh", shell=True)
