@@ -65,8 +65,9 @@ func sort(text string) bool {
                 err != nil {
                     log.Fatal(err)
                 }
+                return true
             } else {
-                letter2 := strings.ToLower(string([] rune(text)[0]))
+                letter2 := strings.ToLower(string([] rune(text)[1]))
                 if isalpha(letter2) {
                     if !isdir("data/" + letter1 + "/" + letter2) {
                         file, err := os.OpenFile("data/" + letter1 + "/" + letter2, os.O_APPEND | os.O_WRONLY, 0644);
@@ -78,8 +79,9 @@ func sort(text string) bool {
                         err != nil {
                             log.Fatal(err)
                         }
+                        return true
                     } else {
-                        letter3 := strings.ToLower(string([] rune(text)[0]))
+                        letter3 := strings.ToLower(string([] rune(text)[2]))
                         if isalpha(letter3) {
                             if !isdir("data/" + letter1 + "/" + letter2 + "/" + letter3) {
                                 file, err := os.OpenFile("data/" + letter1 + "/" + letter2 + "/" + letter3, os.O_APPEND | os.O_WRONLY, 0644);
@@ -91,6 +93,7 @@ func sort(text string) bool {
                                 err != nil {
                                     log.Fatal(err)
                                 }
+                                return true
                             }
                         } else {
                             //letter 3 is symbol
@@ -103,6 +106,7 @@ func sort(text string) bool {
                             err != nil {
                                 log.Fatal(err)
                             }
+                            return true
                         }
                     }
                 } else {
@@ -116,6 +120,7 @@ func sort(text string) bool {
                     err != nil {
                         log.Fatal(err)
                     }
+                    return true
                 }
             }
         } else {
@@ -129,12 +134,14 @@ func sort(text string) bool {
             err != nil {
                 log.Fatal(err)
             }
+            return true
         }
 
     } else {
         fmt.Println("Incorrect Format!")
+        return false
     }
-    return true
+    return false
 }
 
 
@@ -192,13 +199,20 @@ func main() {
     }
     defer file.Close()
 
+    line := "init"
+
     scanner := bufio.NewScanner(file)
     for scanner.Scan() {
-
-
-        sort(scanner.Text())
-        bar.Increment()
-
+        line = scanner.Text()
+        if line != ""{
+            if sort(line) == true {
+                bar.Increment()
+            }else{
+                fmt.Println(line)
+            }    
+        }else{
+            bar.Increment()
+        }
     }
 
     if erro := scanner.Err();
